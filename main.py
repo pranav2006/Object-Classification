@@ -48,7 +48,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 st.markdown('<div class="container">', unsafe_allow_html=True)
 
-st.title("🖼️ CIFAR-10 Image Classifier")
+st.title("🖼️ Object Classifier")
 
 uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 
