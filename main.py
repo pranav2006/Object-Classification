@@ -9,13 +9,13 @@ from PIL import Image
 
 
 app = FastAPI()
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+#app.add_middleware(
+#    CORSMiddleware,
+#    allow_origins=["*"],
+#    allow_credentials=True,
+#    allow_methods=["*"],
+#    allow_headers=["*"],
+#)
 
 model = tf.keras.models.load_model("cnn_model.h5")
 
@@ -53,5 +53,5 @@ async def predict(file: UploadFile = File(...)):
     except Exception as e:
         return JSONResponse({"error": str(e)}, status_code=500)
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+#if __name__ == "__main__":
+#    uvicorn.run(app, host="0.0.0.0", port=8000)
